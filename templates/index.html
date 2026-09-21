@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FAFAF7">
+    <meta name="theme-color" content="#F9F8F6">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="description" content="MarketForge — turn a product brief into a campaign, ad copy variants and a 30-second storyboard in seconds. Try it free on your next launch.">
@@ -13,153 +13,169 @@
     <title>MarketForge — Campaign, Ad Copy &amp; Storyboard in one shot</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --paper: #FAFAF7;
-            --paper-deep: #F7F5F0;
+            --bg-primary: #F9F8F6;
+            --bg-secondary: #F2F0EC;
             --card: #FFFFFF;
-            --ink: #1C1917;
+            --ink: #1A1A1A;
             --ink-soft: #57534E;
-            --muted: #8A8580;
-            --line: rgba(28, 25, 23, 0.08);
+            --muted: #8A8578;
+            --line: #E5E0D6;
             --accent: #146C5C;
-            --accent-soft: #2E8373;
+            --accent-light: #2E8373;
+            --accent-dark: #0F5A4D;
+            --accent-tint: rgba(20, 108, 92, 0.09);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
         body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: var(--paper);
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
             color: var(--ink);
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
-            line-height: 1.6;
+            font-size: clamp(1rem, 0.5vw + 0.9rem, 1.0625rem);
+            line-height: 1.65;
         }
-        .font-display { font-family: 'Fraunces', Georgia, serif; }
-        ::selection { background: rgba(20, 108, 92, 0.16); }
+        .font-display { font-family: 'Cinzel', Georgia, serif; }
+        ::selection { background: var(--accent); color: #fff; }
 
         .wrapper { max-width: 1120px; margin: 0 auto; padding: 1.5rem 1.5rem 0; }
 
         /* header */
         .topbar {
             display: flex; align-items: center; gap: 14px;
-            padding: 0.4rem 0 1.4rem;
+            padding: 0.4rem 0 1.5rem;
             border-bottom: 1px solid var(--line);
         }
         .topbar .wordmark { display: flex; align-items: baseline; gap: 4px; text-decoration: none; color: var(--ink); }
-        .topbar .wordmark .mark { width: 10px; height: 10px; border-radius: 999px; background: var(--accent); align-self: center; margin-right: 5px; }
-        .topbar .wordmark .name { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; }
+        .topbar .wordmark .mark { width: 10px; height: 10px; border-radius: 999px; background: var(--accent); align-self: center; margin-right: 6px; }
+        .topbar .wordmark .name { font-family: 'Cinzel', Georgia, serif; font-weight: 600; font-size: 1.3rem; letter-spacing: 0.01em; }
         .topbar .cta {
             margin-left: auto;
             color: var(--accent);
-            font-size: 0.92rem; font-weight: 500;
+            font-size: 0.9rem; font-weight: 600;
             text-decoration: none;
             transition: color 0.15s ease;
         }
-        .topbar .cta:hover { color: var(--accent-soft); text-decoration: underline; text-underline-offset: 3px; }
+        .topbar .cta:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+        h2 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+            line-height: 1.15; letter-spacing: -0.025em;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(1.25rem, 1.2vw + 0.6rem, 1.5rem);
+            line-height: 1.3; letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
+        }
 
         /* hero */
         .hero {
             display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center;
-            padding: 3.2rem 0 3.4rem;
+            padding: 3.4rem 0 3.6rem;
         }
         .hero h1 {
-            font-family: 'Fraunces', Georgia, serif;
-            font-weight: 500;
-            font-size: 3.05rem; line-height: 1.06; letter-spacing: -0.02em;
-            max-width: 560px;
+            font-family: 'Cinzel', Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(2.4rem, 3.6vw + 0.9rem, 3.5rem);
+            line-height: 1.08; letter-spacing: -0.015em;
+            max-width: 620px;
+            margin-bottom: 1.5rem;
         }
         .hero h1 .accent { color: var(--accent); }
         .hero p.lead {
             color: var(--ink-soft);
-            max-width: 480px; margin: 1.3rem 0 0;
-            font-size: 1.02rem; line-height: 1.7;
+            max-width: 480px;
+            font-size: clamp(1rem, 0.4vw + 0.95rem, 1.0625rem);
+            line-height: 1.7;
         }
         .hero .cta-row { display: flex; align-items: center; gap: 1.4rem; margin-top: 2rem; flex-wrap: wrap; }
-        .btn-primary {
-            display: inline-block;
-            background: var(--accent); color: #FAFAF7;
-            padding: 0.85rem 1.7rem; border-radius: 10px;
-            font-size: 0.95rem; font-weight: 500;
-            text-decoration: none;
-            transition: background 0.18s ease;
+
+        .btn-primary, .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+            background: var(--ink); color: #F9F8F6;
+            padding: 0.85rem 1.9rem;
+            border: 1px solid transparent; border-radius: 999px;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            font-size: 0.9rem; font-weight: 600; letter-spacing: 0.02em;
+            text-decoration: none; cursor: pointer;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s, border-color 0.2s;
         }
-        .btn-primary:hover { background: #0F5A4D; }
+        .btn-primary:hover, .btn:hover { background: #000; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(26, 26, 26, 0.18); }
+        .btn-primary:hover { border-color: var(--accent); }
+        .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
         .link-quiet { color: var(--ink-soft); font-size: 0.92rem; font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--line); transition: color 0.15s; }
         .link-quiet:hover { color: var(--ink); }
+
         .hero-figure { position: relative; }
         .hero-figure img {
             width: 100%; height: 100%; min-height: 340px; object-fit: cover;
-            border-radius: 18px;
-            box-shadow: 0 1px 2px rgba(28,25,23,0.04), 0 12px 32px -18px rgba(28,25,23,0.25);
+            border-radius: 1rem;
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 2px rgba(26, 26, 26, 0.05), 0 18px 40px -22px rgba(26, 26, 26, 0.22);
         }
         .hero-figure figcaption {
             margin-top: 0.7rem;
-            font-size: 0.78rem; color: var(--muted);
+            font-size: 0.8rem; color: var(--muted);
         }
 
-        /* deliverables list */
-        .rails { border-top: 1px solid var(--line); margin: 0 0 3rem; }
-        .rail {
-            display: grid; grid-template-columns: 220px 1fr; gap: 2rem; align-items: baseline;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--line);
+        /* what you get — editorial prose, no numbered boxes */
+        .what-you-get {
+            border-top: 1px solid var(--line);
+            padding: 3.4rem 0 3.2rem;
+            text-align: center;
         }
-        .rail .no { font-family: 'Fraunces', Georgia, serif; font-style: italic; color: var(--accent); font-size: 1rem; }
-        .rail h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 1.55rem; letter-spacing: -0.01em; }
-        .rail p { color: var(--ink-soft); font-size: 0.95rem; max-width: 52ch; margin-top: 0.25rem; }
+        .what-you-get .section-title { margin-bottom: 1rem; }
+        .what-you-get .section-lead {
+            color: var(--ink-soft);
+            max-width: 52ch; margin: 0 auto 2.8rem;
+            line-height: 1.7;
+        }
+        .deliverable { max-width: 65ch; margin: 0 auto 1.9rem; }
+        .deliverable p { color: var(--ink-soft); }
 
         /* form card */
         .card {
             background: var(--card);
             border: 1px solid var(--line);
-            box-shadow: 0 1px 2px rgba(28,25,23,0.03), 0 18px 44px -28px rgba(28,25,23,0.18);
-            border-radius: 16px;
-            padding: 2.2rem;
+            box-shadow: 0 1px 2px rgba(26, 26, 26, 0.04), 0 14px 34px -26px rgba(26, 26, 26, 0.22);
+            border-radius: 1rem;
+            padding: 2.4rem;
             margin-bottom: 3rem;
         }
-        .card h2 {
-            font-family: 'Fraunces', Georgia, serif;
-            font-weight: 500; font-size: 1.6rem; letter-spacing: -0.01em;
-            margin-bottom: 0.4rem;
-        }
-        .card .card-sub { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 1.6rem; }
+        .card .card-sub { color: var(--ink-soft); font-size: 1rem; margin-bottom: 1.8rem; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem 1.4rem; }
-        .form-group label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.45rem; color: var(--ink); }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.45rem; color: var(--ink); }
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.72rem 0.9rem;
-            background: var(--paper);
+            padding: 0.75rem 1rem;
+            background: var(--card);
             border: 1px solid var(--line);
-            border-radius: 9px;
+            border-radius: 0.75rem;
             color: var(--ink);
-            font-family: 'Inter', system-ui, sans-serif;
-            font-size: 0.92rem;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            font-size: 0.9rem;
             transition: border-color 0.18s, box-shadow 0.18s;
         }
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
-            border-color: rgba(20, 108, 92, 0.45);
-            box-shadow: 0 0 0 3px rgba(20, 108, 92, 0.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-tint);
         }
         .form-group input::placeholder, .form-group textarea::placeholder { color: #A8A29E; }
         .form-group textarea { min-height: 96px; resize: vertical; }
         .form-group.full { grid-column: 1 / -1; }
         .btn-container { margin-top: 1.8rem; }
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
-            padding: 0.85rem 2rem;
-            background: var(--accent); color: #FAFAF7;
-            border: none; border-radius: 10px;
-            font-family: 'Inter', system-ui, sans-serif;
-            font-size: 0.95rem; font-weight: 500;
-            cursor: pointer;
-            transition: background 0.18s ease;
-        }
-        .btn:hover { background: #0F5A4D; }
-        .btn:disabled { opacity: 0.55; cursor: not-allowed; }
-        .spinner { display: none; width: 16px; height: 16px; border: 2px solid rgba(250,250,247,0.4); border-top-color: #FAFAF7; border-radius: 50%; animation: spin 0.7s linear infinite; }
+
+        .spinner { display: none; width: 16px; height: 16px; border: 2px solid rgba(249, 248, 246, 0.4); border-top-color: #F9F8F6; border-radius: 999px; animation: spin 0.7s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
         .btn.loading .spinner { display: inline-block; }
         .btn.loading .btn-text { display: none; }
@@ -167,11 +183,7 @@
         /* results */
         .result-section { display: none; margin-bottom: 3rem; }
         .result-section.visible { display: block; }
-        .result-section > .result-head {
-            font-family: 'Fraunces', Georgia, serif;
-            font-weight: 500; font-size: 1.6rem; letter-spacing: -0.01em;
-            margin-bottom: 1rem;
-        }
+        .result-section > .result-head { margin-bottom: 1.4rem; }
         .tab-bar { display: flex; flex-wrap: wrap; gap: 1.6rem; margin-bottom: 1.4rem; border-bottom: 1px solid var(--line); }
         .tab-btn {
             padding: 0.5rem 0 0.9rem;
@@ -181,9 +193,9 @@
             margin-bottom: -1px;
             color: var(--ink-soft);
             cursor: pointer;
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.15s, border-color 0.15s;
         }
         .tab-btn:hover { color: var(--ink); }
@@ -193,22 +205,25 @@
         .result-card {
             background: var(--card);
             border: 1px solid var(--line);
-            border-radius: 12px;
-            padding: 1.25rem 1.35rem;
+            border-radius: 1rem;
+            padding: 1.4rem 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
         }
-        .result-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1rem; font-weight: 500; color: var(--accent); margin-bottom: 0.5rem; }
-        .result-card p, .result-card li { font-size: 0.9rem; line-height: 1.6; color: var(--ink-soft); }
+        .result-card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(26, 26, 26, 0.1); border-color: var(--accent); }
+        .result-card h3 { font-family: 'Cinzel', Georgia, serif; font-size: 1rem; font-weight: 600; color: var(--accent-dark); margin-bottom: 0.6rem; }
+        .result-card p, .result-card li { font-size: 0.9rem; line-height: 1.65; color: var(--ink-soft); }
         .result-card ul { list-style: none; padding: 0; }
         .result-card ul li { position: relative; padding-left: 16px; margin: 0.3rem 0; }
         .result-card ul li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 5px; height: 5px; border-radius: 999px; background: var(--accent); }
         .tag {
             display: inline-block;
-            padding: 0.15rem 0.6rem;
-            background: rgba(20, 108, 92, 0.07);
-            border: 1px solid rgba(20, 108, 92, 0.16);
-            border-radius: 6px;
+            padding: 0.2rem 0.75rem;
+            background: var(--accent-tint);
+            border: 1px solid rgba(20, 108, 92, 0.28);
+            border-radius: 999px;
             font-size: 0.8rem;
-            color: var(--accent);
+            font-weight: 500;
+            color: var(--accent-dark);
             margin: 0.15rem 0.15rem 0.15rem 0;
         }
         .storyboard-text { white-space: pre-wrap; font-size: 0.9rem; line-height: 1.7; color: var(--ink-soft); }
@@ -217,17 +232,17 @@
         .loading-overlay {
             display: none;
             position: fixed; inset: 0; z-index: 100;
-            background: rgba(247, 245, 240, 0.92);
+            background: rgba(249, 248, 246, 0.94);
             justify-content: center; align-items: center; flex-direction: column; gap: 1rem;
         }
         .loading-overlay.visible { display: flex; }
-        .spinner-lg { width: 44px; height: 44px; border: 2px solid rgba(20,108,92,0.18); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        .spinner-lg { width: 44px; height: 44px; border: 2px solid rgba(20, 108, 92, 0.18); border-top-color: var(--accent); border-radius: 999px; animation: spin 0.8s linear infinite; }
         .loading-overlay p { color: var(--ink-soft); font-size: 0.95rem; }
 
         /* footer */
         .footer {
             text-align: center; padding: 1.6rem 0 2.4rem;
-            color: var(--muted); font-size: 0.82rem;
+            color: var(--muted); font-size: 0.85rem;
             border-top: 1px solid var(--line);
         }
         .footer a { color: var(--accent); text-decoration: none; }
@@ -235,9 +250,7 @@
 
         @media (max-width: 820px) {
             .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.4rem 0 2.6rem; }
-            .hero h1 { font-size: 2.3rem; }
             .hero-figure img { min-height: 240px; }
-            .rail { grid-template-columns: 1fr; gap: 0.4rem; }
             .form-grid { grid-template-columns: 1fr; }
             .card { padding: 1.6rem; }
             .wrapper { padding: 1.1rem 1.1rem 0; }
@@ -278,27 +291,20 @@
             </figure>
         </section>
 
-        <section class="rails" id="what-you-get">
-            <div class="rail">
-                <span class="no">01</span>
-                <div>
-                    <h2>The campaign brief</h2>
-                    <p>Name, objectives, audience, media plan and KPIs — a short document your team can actually act on.</p>
-                </div>
+        <section class="what-you-get" id="what-you-get">
+            <h2 class="section-title">Everything you need to launch, in one sitting</h2>
+            <p class="section-lead">The brief you already write by hand — now structured, localised and storyboarded so your team can act on it.</p>
+            <div class="deliverable">
+                <h3>The campaign brief</h3>
+                <p>Name, objectives, audience, media plan and KPIs — a short document your team can actually act on.</p>
             </div>
-            <div class="rail">
-                <span class="no">02</span>
-                <div>
-                    <h2>Ad copy, localised</h2>
-                    <p>Three copy directions with per-market localisation notes and the visual direction for each.</p>
-                </div>
+            <div class="deliverable">
+                <h3>Ad copy, localised</h3>
+                <p>Three copy directions with per-market localisation notes and the visual direction for each.</p>
             </div>
-            <div class="rail">
-                <span class="no">03</span>
-                <div>
-                    <h2>The 30-second storyboard</h2>
-                    <p>A YouTube Shorts storyboard — scene by scene, with visuals and audio, timed to :30.</p>
-                </div>
+            <div class="deliverable">
+                <h3>The 30-second storyboard</h3>
+                <p>A YouTube Shorts storyboard — scene by scene, with visuals and audio, timed to :30.</p>
             </div>
         </section>
 
