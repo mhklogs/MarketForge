@@ -6,11 +6,17 @@ from google.genai import types
 from google.genai.types import GenerateContentConfig, GoogleSearch, Tool
 from pydantic import BaseModel
 
-API_KEY = os.environ.get("GEMINI_API_KEY")
-if not API_KEY:
-    raise RuntimeError("GEMINI_API_KEY environment variable not set")
-client = genai.Client(api_key=API_KEY)
 MODEL_ID = "gemini-2.5-flash"
+_client = None
+
+def get_client():
+    global _client
+    if _client is None:
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            raise RuntimeError("GEMINI_API_KEY environment variable not set")
+        _client = genai.Client(api_key=api_key)
+    return _client
 
 app = Flask(__name__)
 
@@ -64,7 +70,7 @@ Return the campaign brief in this JSON structure:
 - target_countries: list of target countries
 - performance_metrics: list of KPIs"""
 
-        response = client.models.generate_content(
+        response = get_client().models.generate_content(
             model=MODEL_ID,
             contents=[prompt],
             config=GenerateContentConfig(
@@ -84,7 +90,7 @@ Return the ad copy in this JSON structure:
 - localization_notes: list of localization notes per market
 - visual_description: list of visual descriptions per ad"""
 
-        ad_response = client.models.generate_content(
+        ad_response = get_client().models.generate_content(
             model=MODEL_ID,
             contents=[ad_prompt],
             config=GenerateContentConfig(
@@ -104,7 +110,7 @@ Target Countries: {target_countries}
 
 Create a creative storyboard with scenes, timing, visuals, and audio."""
 
-        story_response = client.models.generate_content(
+        story_response = get_client().models.generate_content(
             model=MODEL_ID,
             contents=[story_prompt],
         )
