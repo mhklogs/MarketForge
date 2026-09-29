@@ -2,8 +2,7 @@ import json
 import os
 from flask import Flask, render_template, request, jsonify
 from google import genai
-from google.genai import types
-from google.genai.types import GenerateContentConfig, GoogleSearch, Tool
+from google.genai.types import GenerateContentConfig
 from pydantic import BaseModel
 
 MODEL_ID = "gemini-2.5-flash"
