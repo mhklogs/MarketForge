@@ -17,6 +17,7 @@
 | `05-use-cases.md` | Use cases derived from detected user-facing routes |
 | `06-architecture.md` | Detected components, data stores, integrations, env vars |
 | `07-sdlc-lifecycle.md` | SDLC methodology for this build & artifact traceability |
+| `08-roadmap.md` | Delivery roadmap: prioritised backlog, sprint plan, burndown |
 
 ## Detected at a glance
 

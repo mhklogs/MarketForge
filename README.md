@@ -127,6 +127,12 @@ requirements, data-flow diagram, use cases and an architecture summary.
 - Single global API key with no rate limiting or auth on the endpoint. Do not
   expose this to the public as-is.
 
+## What changed (v3)
+
+- v1→v2: research-based market analysis + SDLC documentation (`documents/01–07`).
+- v2→v3: delivery roadmap with sprint plan and ceremonies
+  (`documents/08-roadmap.md`); this changelog. No source code changed.
+
 ## License
 
 MIT — use commercially, no attribution required.
